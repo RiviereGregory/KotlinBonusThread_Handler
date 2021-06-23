@@ -15,8 +15,13 @@ class MainActivity : AppCompatActivity() {
 //            sum += i
 //        }
 //        Log.d("MainActivity", "sum=$sum")
+        val runnable = MyRunnable()
+        val threadRunnable = Thread(runnable)
+        threadRunnable.start()
+
         val thread = MyThread()
         thread.start()
+
         Log.d("MainActivity", "onCreate ==> END ")
     }
 }
