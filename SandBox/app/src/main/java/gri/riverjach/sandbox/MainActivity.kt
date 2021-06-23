@@ -16,11 +16,8 @@ class MainActivity : AppCompatActivity() {
 //        }
 //        Log.d("MainActivity", "sum=$sum")
         val runnable = MyRunnable()
-        val threadRunnable = Thread(runnable)
+        val threadRunnable = Thread(runnable, "KotlinThread")
         threadRunnable.start()
-
-        val thread = MyThread()
-        thread.start()
 
         Log.d("MainActivity", "onCreate ==> END ")
     }

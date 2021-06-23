@@ -2,14 +2,19 @@ package gri.riverjach.sandbox
 
 import android.util.Log
 
-class MyRunnable:Runnable {
+class MyRunnable : Runnable {
     override fun run() {
-        Log.d("MainActivity", "Beginning of MyRunnable")
+        Log.d("MyRunnable", "Beginning of MyRunnable")
+        Log.d(
+            "MyRunnable",
+            "Thread id=${Thread.currentThread().id}, name=${Thread.currentThread().name}"
+        )
+
         var sum = 0L
         for (i in 1..2000000000) {
             sum += i
         }
-        Log.d("MainActivity", "sum=$sum")
+        Log.d("MyRunnable", "sum=$sum")
     }
 
 }
