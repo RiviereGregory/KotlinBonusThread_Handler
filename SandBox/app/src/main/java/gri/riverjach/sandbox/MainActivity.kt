@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val sleepButton = findViewById(R.id.sleepButton) as Button
+        val stopButton = findViewById(R.id.stopButton) as Button
         Log.d("MainActivity", "onCreate ==> BEGIN ")
 
         val strings = listOf(
@@ -26,16 +27,25 @@ class MainActivity : AppCompatActivity() {
 
         val runnable = SleepRunnable()
         val threadSleep = Thread(runnable)
+
         sleepButton.setOnClickListener {
             runnable.sleep()
         }
 
+        stopButton.setOnClickListener {
+            runnable.stop()
+            // threadSleep.join va bloquer le thread pendant 100 ms en attendant
+            // que le thread s'arrêtre
+            threadSleep.join(100)
+
+            // Pour stopper le thread s'il ne s'arrête pas naturellement
+            threadSleep.interrupt()
+        }
 
         threadSleep.start()
 
         // Bloque le thread où on est jusqu'à ce que le threadSleep (ici) soit fini
-        threadSleep.join()
-
+        // threadSleep.join()
 
         Log.d("MainActivity", "onCreate ==> END ")
     }
