@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var sleepButton = findViewById(R.id.sleepButton) as Button
+        val sleepButton = findViewById(R.id.sleepButton) as Button
         Log.d("MainActivity", "onCreate ==> BEGIN ")
 
         val strings = listOf(
@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
 
 
         threadSleep.start()
+
+        // Bloque le thread où on est jusqu'à ce que le threadSleep (ici) soit fini
+        threadSleep.join()
 
 
         Log.d("MainActivity", "onCreate ==> END ")

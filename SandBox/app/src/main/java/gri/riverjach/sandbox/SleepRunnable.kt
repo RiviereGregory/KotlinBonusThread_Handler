@@ -11,16 +11,13 @@ class SleepRunnable : Runnable {
         for (i in 1..10000000000) {
             sum += i
 
-            if (i % 10L == 0L) {
-                Thread.sleep(100)
-            }
             if (shouldSleep) {
                 shouldSleep = false
                 Log.d("SleepRunnable", "About to sleep 4000ms")
                 Thread.sleep(4000)
             }
-            Log.d("SleepRunnable", "sum=$sum")
         }
+        Log.d("SleepRunnable", "sum=$sum")
         Log.d("SleepRunnable", "End")
     }
 
