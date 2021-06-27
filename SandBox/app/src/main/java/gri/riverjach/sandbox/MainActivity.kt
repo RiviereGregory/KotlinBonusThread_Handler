@@ -47,6 +47,16 @@ class MainActivity : AppCompatActivity() {
         // Bloque le thread où on est jusqu'à ce que le threadSleep (ici) soit fini
         // threadSleep.join()
 
+
+        val counterRunnable = CounterRunnable()
+        val t1 = Thread(counterRunnable)
+        val t2 = Thread(counterRunnable)
+        val t3 = Thread(counterRunnable)
+
+        t1.start()
+        t2.start()
+        t3.start()
+
         Log.d("MainActivity", "onCreate ==> END ")
     }
 }
