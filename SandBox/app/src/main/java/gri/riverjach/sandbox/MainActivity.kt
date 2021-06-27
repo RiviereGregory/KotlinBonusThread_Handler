@@ -1,17 +1,45 @@
 package gri.riverjach.sandbox
 
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    private val handle = object : Handler(Looper.getMainLooper()) {
+        override fun handleMessage(msg: Message) {
+            Log.d("MainActivity", "got message: ${msg.what}")
+            val resultTextView = findViewById(R.id.resultTextView) as TextView
+            when (msg.what) {
+                WorkerHandler.CODE_RESULT -> {
+                    resultTextView.setTextColor(Color.GREEN)
+                    resultTextView.text = "The result is ${msg.arg1}"
+                }
+                WorkerHandler.CODE_FAILURE -> {
+
+                    resultTextView.setTextColor(Color.RED)
+                    resultTextView.text = "The result is ${msg.arg1}"
+                }
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val sleepButton = findViewById(R.id.sleepButton) as Button
         val stopButton = findViewById(R.id.stopButton) as Button
         Log.d("MainActivity", "onCreate ==> BEGIN ")
+
+        val workerHandler = WorkerHandler(handle, 4)
+        val threadWorkerHandler = Thread(workerHandler)
+        threadWorkerHandler.start()
+
 
         val strings = listOf(
             "Kotlin",
