@@ -57,6 +57,9 @@ class MainActivity : AppCompatActivity() {
         t2.start()
         t3.start()
 
+        val crawler = Crawler()
+        crawler.crawl()
+
         Log.d("MainActivity", "onCreate ==> END ")
     }
 }
