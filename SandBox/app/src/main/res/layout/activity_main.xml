@@ -7,64 +7,24 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/sleepButton"
+        android:id="@+id/threadButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sleep"
-        app:layout_constraintBottom_toTopOf="@+id/stopButton"
-        app:layout_constraintEnd_toEndOf="@+id/resultTextView"
-        app:layout_constraintStart_toStartOf="@+id/resultTextView"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
-
-    <Button
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sleepButton"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/sleepButton"
-        app:layout_constraintTop_toBottomOf="@+id/sleepButton"
-        app:layout_constraintVertical_bias="0.501" />
-
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/sleepButton"
-        app:layout_constraintEnd_toEndOf="@+id/statusTextView"
-        app:layout_constraintStart_toStartOf="@+id/statusTextView"
+        android:text="Thread"
+        app:layout_constraintBottom_toTopOf="@+id/handlerButton"
+        app:layout_constraintEnd_toEndOf="@+id/handlerButton"
+        app:layout_constraintStart_toStartOf="@+id/handlerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/statusTextView"
+    <Button
+        android:id="@+id/handlerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Idle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="14sp"
+        android:text="Handler"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/contentTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/statusTextView"
-        app:layout_constraintStart_toStartOf="@+id/statusTextView"
-        app:layout_constraintTop_toBottomOf="@+id/statusTextView"
-        android:text="Content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="8sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
