@@ -15,6 +15,9 @@
             android:name=".HandlerActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".HandlerReadActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".HandlerDActivity"
             android:parentActivityName=".MainActivity" />
         <activity

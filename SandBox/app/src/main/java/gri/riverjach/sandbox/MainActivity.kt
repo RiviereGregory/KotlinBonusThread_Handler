@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         val threadButton = findViewById(R.id.threadButton) as Button
         val handlerButton = findViewById(R.id.handlerButton) as Button
         val handlerDButton = findViewById(R.id.handlerDButton) as Button
+        val readerButton = findViewById(R.id.readerButton) as Button
         Log.d("MainActivity", "onCreate ==> BEGIN ")
 
         threadButton.setOnClickListener {
@@ -29,6 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         handlerDButton.setOnClickListener {
             val intent = Intent(this, HandlerDActivity::class.java)
+            intent.action = Intent.ACTION_VIEW
+            startActivity(intent)
+        }
+
+        readerButton.setOnClickListener {
+            val intent = Intent(this, HandlerReadActivity::class.java)
             intent.action = Intent.ACTION_VIEW
             startActivity(intent)
         }

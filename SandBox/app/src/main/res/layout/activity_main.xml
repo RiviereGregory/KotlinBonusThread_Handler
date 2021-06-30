@@ -31,11 +31,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Handler décalé"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/readerButton"
         app:layout_constraintEnd_toEndOf="@+id/handlerButton"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/handlerButton"
         app:layout_constraintTop_toBottomOf="@+id/handlerButton"
+        app:layout_constraintVertical_bias="0.713" />
+
+    <Button
+        android:id="@+id/readerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lire un site"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/handlerDButton"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="@+id/handlerDButton"
+        app:layout_constraintTop_toBottomOf="@+id/handlerDButton"
         app:layout_constraintVertical_bias="0.713" />
 
 
