@@ -26,5 +26,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/handlerDButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Handler décalé"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/handlerButton"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="@+id/handlerButton"
+        app:layout_constraintTop_toBottomOf="@+id/handlerButton"
+        app:layout_constraintVertical_bias="0.713" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

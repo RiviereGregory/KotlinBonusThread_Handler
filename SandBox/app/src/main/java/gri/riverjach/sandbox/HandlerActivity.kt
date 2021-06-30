@@ -15,7 +15,7 @@ class HandlerActivity: AppCompatActivity() {
     private val handle = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
             Log.d("MainActivity", "got message: ${msg.what}")
-            val resultTextView = findViewById(R.id.resultTextView) as TextView
+            val resultTextView = findViewById(R.id.itemTextView) as TextView
             when (msg.what) {
                 WorkerHandler.CODE_RESULT -> {
                     resultTextView.setTextColor(Color.GREEN)
